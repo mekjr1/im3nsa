@@ -1,0 +1,107 @@
+-extends "smartmin/list.html"
+
+-load compress temba smartmin humanize
+-load i18n
+
+-block extra-less
+  {{block.super}}
+  -compress css
+    {% lessblock %}
+      :plain
+        .service {
+          margin-top:5px;
+        }
+
+        .num-credits {
+          text-align:right;
+
+          a {
+            color: #333;
+            font-size:22px;
+            font-weight:100;
+          }
+        }
+
+        .used-pct {
+          text-align:right;
+          font-size:18px;
+          color: #aaa;
+          &.used-warning {
+            color: @flat-mutedorange;
+          }
+
+          &.used-alert {
+            color: @flat-mutedred;
+          }
+        }
+
+        .suspended {
+          color: @flat-mutedred;
+        }
+
+        .table td {
+          vertical-align:middle
+        }
+
+        .value-owner {
+          width:280px;
+        }
+
+        .owner {
+          display:inline;
+        }
+
+        .service {
+          width: 50px;
+          margin-right:20px;
+        }
+
+        .owner-email {
+          font-size:11px;
+          line-height:11px;
+
+        }
+
+        .owner-name {
+        }
+
+        .org-timezone {
+          font-size: 11px;
+          line-height:11px;
+        }
+
+        .quick {
+          padding: 5px;
+        }
+
+        .quick-searches {
+          margin-bottom: 20px;
+          background: @flat-white + #090909;
+          padding:10px;
+          .rounded-corners(5px);
+        }
+
+    {% endlessblock %}
+
+-block extra-script
+  {{block.super}}
+
+-block pre-table
+  .quick-searches
+    -if search == ""
+      %span{class:'quick'}
+        All
+    -else
+      %a{class:'quick', href:'?search='} All
+    |&nbsp;
+    %a{class:'quick', href:'?search="STATUS": "suspended"'}><
+      Suspended
+
+    -for s in searches
+      |
+      -if search == s
+        %span{class:'quick'}
+          {{ s }}
+      -else
+        %a{class:'quick', href:'?search={{s}}'}= s
+

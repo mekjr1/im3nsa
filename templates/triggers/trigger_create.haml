@@ -1,0 +1,24 @@
+-extends "smartmin/base.html"
+-load i18n
+
+-block extra-style
+  :css
+    .help-block {
+      font-size: 85%;
+      color: #ccc;
+    }
+
+    .submit-button {
+      margin-top:15px;
+    }
+
+-block content
+
+  %p.instructions
+    -trans "Triggers allow users to start flows based on user actions or schedules."
+
+  -include "formax.haml"
+
+-block extra-script
+  {{ block.super }}
+  <script src="{% url 'django.views.i18n.javascript_catalog' %}"></script>

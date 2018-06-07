@@ -1,0 +1,86 @@
+-extends "smartmin/list.html"
+-load smartmin sms temba compress
+-load i18n humanize
+
+-block page-top
+  %h2
+    {{ title }}
+
+-block title-icon
+  %span.title-icon
+    .glyph.icon-clock
+
+-block top-form
+
+-block content
+
+  -include "formax.haml"
+
+  -if object_list
+    %br
+    %br
+    .row
+      .span12
+        %h3
+          -trans "Send History"
+
+      .span12
+        %table.list-table.sms_list.table.table-condensed{style: '{% if not org_perms.msgs.broadcast_send %}margin-top:10px{% endif %}'}
+          %tbody
+            -for object in object_list
+              %tr{class:'{% cycle row1 row2 %}'}
+                %td
+                  -if object.recipient_count
+                    {% blocktrans with count_comma=object.recipient_count|intcomma count cc=object.recipient_count %}
+                      {{ count_comma }} recipient
+                    {% plural %}
+                      {{ count_comma }} recipients
+                    {% endblocktrans %}
+                %td
+                  {{ object.get_default_text }}
+                %td
+                  %nobr
+                    {{ object.created_on|gmail_time }}
+
+        -block paginator
+          = block.super
+
+-block extra-script
+  {{block.super}}
+
+-block extra-less
+  -compress css inline
+    {% lessblock %}
+      :plain
+        h2 {
+          margin-bottom:30px;
+        }
+
+        .list-table {
+          margin-top:0;
+        }
+
+        ul {
+          list-style: none;
+        }
+
+        li {
+          padding: 5px 0px;
+        }
+
+        .schedule-detail {
+          font-size: 16px;
+
+          a {
+            text-decoration: none;
+          }
+        }
+
+        .sends-to {
+          margin-left: 20px;
+        }
+
+        .value-icon {
+          display:none;
+        }
+    {% endlessblock %}

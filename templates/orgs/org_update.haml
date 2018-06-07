@@ -1,0 +1,38 @@
+-extends "smartmin/update.html"
+
+-block title-text
+  %h1= org.name
+
+-block above-bar
+  .pull-right
+    -block buttons-right
+      -block gear-menu
+        -include "gear_links_include.haml"
+
+-block post-form
+  -if perms.auth.org_clear_cache
+    <form class="smartmin-form form-horizontal" action="{% url 'orgs.org_clear_cache' object.id %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="control-group">
+        <label class="control-label">Cache</label>
+        <div class="controls">
+          <button type="submit" name="cache" value="2" class="btn btn-primary">Clear Credits</button>
+        </div>
+      </div>
+    </form>
+
+-block extra-style
+  {{block.super}}
+  :css
+    .form-horizontal .controls {
+      margin-left: 180px;
+    }
+
+    .form-horizontal .smartmin-form-buttons {
+      padding-left: 180px;
+      margin-bottom: 20px;
+    }
+
+    .form-horizontal .control-label {
+      width: 160px;
+    }
