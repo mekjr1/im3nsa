@@ -1,5 +1,5 @@
 
-RapidPro has been made possible by the contribution of many talented
+im3nsa is based on RapidPro has been made possible by the contribution of many talented
 engineers. The following users have contributed code to the RapidPro
 codebase. (sorted chronologically)
 
@@ -17,3 +17,8 @@ codebase. (sorted chronologically)
 * Tobias McNulty [@tobiasmcnulty](https://github.com/tobiasmcnulty)
 * Praekelt Foundation - [@praekeltfoundation](https://github.com/praekeltfoundation)
 * Chris Johnson - [@cjcodes](https://github.com/cjcodes)
+
+im3nsa contributor
+* Abdul Meque - [@mekjr1] (https://github.com/mekjr1)
+* SD Consultores e Servicos [@sdconsultores] (https://github.com/sdconsultores)
+* NM Technology Services & Solutions [@nmtss.net](https://github.com/nmtss.net)

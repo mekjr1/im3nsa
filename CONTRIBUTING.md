@@ -1,6 +1,6 @@
-# Contributing to RapidPro
+# Contributing to im3nsa
 
-Contributions to the RapidPro projects are highly appreciated! 
+Contributions to the im3nsa projects are highly appreciated! 
 
 We accept contributions in the form of:
  * bug reports 
@@ -11,4 +11,4 @@ All non-trivial pull requests, especially those with functional changes should f
 
 Note that all pull requests must maintain 100% unit test coverage (without new no-covers) and pass all unit tests.
 
-RapidPro is licensed under the AGPL-3.0 and your contributions will be licensed in the same way. Note that contributing does not change your rights to use your own Contributions for any other purpose.
+im3nsa is licensed under the AGPL-3.0 and your contributions will be licensed in the same way. Note that contributing does not change your rights to use your own Contributions for any other purpose.
