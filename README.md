@@ -5,7 +5,7 @@ To learn more, please visit the project site at http://mekjr1.github.io/im3nsa.
 
 ### Get Involved
 
-To run im3nsa for development, follow the Quick Start guide at http://mekjr1.github.io/im3nsa/docs/development.
+To run im3nsa for development, follow the Quick Start guide at http://www.abdulmeque.com/posts/2018/06/im3nsa-development/.
 
 ### License
 
