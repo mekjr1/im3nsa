@@ -85,5 +85,3 @@ warnings.filterwarnings('error', r"DateTimeField .* received a naive datetime",
 # Make our sitestatic URL be our static URL on development
 # -----------------------------------------------------------------------------------
 STATIC_URL = '/sitestatic/'
-
-
